@@ -22,7 +22,9 @@ stages:
     - bash: echo Build DevDeployJob
 
 - stage: ProdDeploy
-  dependsOn: DevDeploy
+  dependsOn:
+  - Build 
+  - DevDeploy
   jobs:
   - job: ProdDeploy
     steps:
